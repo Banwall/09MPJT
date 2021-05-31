@@ -15,12 +15,32 @@
 
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 
 	function fncGetList(currentPage){
 		document.getElementById("currentPage").value = currentPage;
 		document.detailForm.submit();
 	}
+	
+	$( function() {
+		
+		$( "td.ct_btn01:contains('°Ë»ö')").on("click", function() {
+			
+			fncGetList(1);
+			
+		});
+		
+		$( ".ct_list_pop td:nth-child(3)" ).on("click" , function() {
+			//Debug..
+			//alert(  $( this ).text().trim() );
+			//alert(  $( this ).text().trim() );
+			self.location ="/product/getProduct?prodNo=10000&menu=manage";
+	});
+		
+		
+		
+	});
 	
 </script>
 </head>
@@ -125,7 +145,10 @@
 				<td align="left">
 				<c:choose>
 				<c:when test="${user.userId == 'admin'}">
+					<%-- ///////////////////////////////////////////////////////////////////////////////////////////////////
 					<a href="/product/getProduct?prodNo=${purchase.prodNo}&menu=${menu}">${purchase.prodName}</a>
+					/////////////////////////////////////////////////////////////////////////////////////////////////// --%>
+					${purchase.prodName}
 				</c:when>
 				<c:otherwise>
 					<c:choose>
