@@ -58,14 +58,11 @@
       
    });
    
-   function resetData(){
-      document.detailForm.reset();
-   }
-   
    $( function() {
       
       $( "td.ct_btn01:contains('취소')").on("click", function() {
-         resetData();
+          
+    	  window.history.back();
       });
       
    });

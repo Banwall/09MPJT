@@ -11,9 +11,9 @@
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
-
+	
 	function fncUpdateProductView() {
-		
+
 		$('form').attr("method", "GET").attr("action", "/product/updateProduct");
 		self.location ="/product/updateProduct?prodNo=10000";
 		
@@ -23,16 +23,22 @@
 	
 		$( "td.ct_btn01:contains('수정')").on("click", function() {
 			
-			fncUpdateProductView().submit();
+			$( fncUpdateProductView() ).submit();
 		});
 		
 	});
+	
+	function fncListProduct() {
+		
+		$( 'form' ).attr("method", "POST").attr("action", "/product/listProduct").submit();
+		self.location ="/product/listProduct?menu=manage";
+	}
 	
 	$( function() {
 		
 		$( "td.ct_btn01:contains('확인')").on("click", function() {
 			
-			window.history.back();
+			fncListProduct();
 		});
 		
 	});

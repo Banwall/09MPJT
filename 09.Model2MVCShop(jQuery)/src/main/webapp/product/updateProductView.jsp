@@ -8,8 +8,8 @@
 
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 
-<script type="text/javascript" src="../javascript/calendar.js">
-</script>
+<script type="text/javascript" src="../javascript/calendar.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 <script type="text/javascript">
 
@@ -54,15 +54,13 @@
 			fncUpdateProduct();
 		})
 	})
-	
-	function resetData(){
-      document.detailForm.reset();
-   }
    
    $( function() {
       
       $( "td.ct_btn01:contains('√Îº“')").on("click", function() {
-         resetData();
+
+    	  window.history.back();
+    	  
       });
       
    });
@@ -72,7 +70,7 @@
 
 <body bgcolor="#ffffff" text="#000000">
 
-<form name="detailForm" method="post" >
+<form name="detailForm">
 
 <input type="hidden" name="prodNo" value="${product.prodNo }"/>
 
