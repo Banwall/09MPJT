@@ -10,12 +10,17 @@
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 <script type="text/javascript">
 	
+	
+	
 	function fncUpdateProductView() {
-
+		
+		var prodNo = $( "td.prodNo" ).text();
+		
 		$('form').attr("method", "GET").attr("action", "/product/updateProduct");
-		self.location ="/product/updateProduct?prodNo=10000";
+		self.location ="/product/updateProduct?prodNo="+prodNo;
 		
 	}
 	
@@ -81,7 +86,7 @@
 		<td class="ct_write01">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="105">${product.prodNo }</td>
+					<td width="105" class="prodNo">${product.prodNo}</td>
 				</tr>
 			</table>
 		</td>
