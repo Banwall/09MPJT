@@ -35,7 +35,10 @@
 			//Debug..
 			//alert(  $( this ).text().trim() );
 			//alert(  $( this ).text().trim() );
-			self.location ="/product/getProduct?prodNo=10000&menu=manage";
+			var prodNo = $(this).find('input').val()
+			self.location ="/product/getProduct?prodNo="+prodNo+"&menu=${menu}";
+			
+			alert("prodNo="+prodNo+"&menu=${menu}")
 		});
 		
 	});
@@ -147,6 +150,7 @@
 					<a href="/product/getProduct?prodNo=${purchase.prodNo}&menu=${menu}">${purchase.prodName}</a>
 					/////////////////////////////////////////////////////////////////////////////////////////////////// --%>
 					${purchase.prodName}
+					<input type="hidden" id="prodNo" value="${purchase.prodNo}"/>
 				</c:when>
 				<c:otherwise>
 					<c:choose>
