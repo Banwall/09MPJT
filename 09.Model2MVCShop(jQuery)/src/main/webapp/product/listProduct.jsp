@@ -36,9 +36,7 @@
 			//alert(  $( this ).text().trim() );
 			//alert(  $( this ).text().trim() );
 			self.location ="/product/getProduct?prodNo=10000&menu=manage";
-	});
-		
-		
+		});
 		
 	});
 	
